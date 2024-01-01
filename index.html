@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Autonomous vehicle driving </title>
+    <style>
+
+
+
+        #contact h2 {
+            color: #333; 
+            margin-bottom: 20px;
+        }
+
+        #contact p, #contact ul {
+            color: #666; 
+            font-size: 20px;
+        }
+
+        #contact a {
+            color: #007bff; 
+            text-decoration: none;
+        }
+
+        #contact a:hover {
+            text-decoration: underline; 
+        }
+
+        #contact ul {
+            list-style-type: none; 
+            padding: 0;
+        }
+
+        #contact li {
+            margin-bottom: 10px; 
+        }
+
+
+        h2 {
+                font-size: 32px;  
+            }
+
+
+        .project-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+            }
+
+        .project-image img {
+            max-width: 50%;
+            
+            height: auto;
+        }
+
+        .project-links {
+            margin-left: auto; 
+            margin-right: 10px; 
+        }
+
+
+        .project-links button {
+    
+            background-color: rgba(51, 51, 51, 0.9);
+            color: white; 
+            border: none;
+            padding: 15px 30px; 
+            
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px; 
+
+        }
+
+
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            text-align: center; 
+        }
+
+        .main-content {
+            text-align: center; 
+        }
+
+        img {
+            max-width: 80%; 
+            height: auto; 
+        }
+
+      
+        .image-text {
+            position: absolute;
+            top: 1%; 
+            left: 10%; 
+            right: 10%; 
+            color: white; 
+            font-size: 40px; 
+            background-color: rgba(51, 51, 51, 0.9);
+            font-weight: bold;
+            padding: 20px; 
+            text-align: center; 
+        }
+
+        .subtitle {
+            font-size: 20px; 
+            margin-top: 10px; 
+        }
+
+
+        .navbar a {
+            display: inline-block; 
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            margin: 0 10px; 
+        }
+
+        .main-content {
+            padding: 16px;
+        }
+
+        .section {
+            margin-top: 20px;
+            border-bottom: 1px solid #ccc; 
+            padding-bottom: 20px; 
+        }
+
+  
+        
+        #home, #description, #project, #contact {
+            padding-top: 100px;    
+            margin-top: -100px;    
+            display: block;        
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="#home">Home</a>
+    <a href="#description">Description</a>
+    <a href="#project">The Project</a>
+    <a href="#contact">Contact</a>
+</div>
+
+<div class="main-content">
+    <div id="home" class="section">
+    <div class="image-container" style="position: relative; display: inline-block;">
+        <img src="image/mycar.png" alt="My Autonomous Car">
+        <div class="image-text">
+            Autonomous vehicle driving 
+            <div class="subtitle">by Kostis Kalligiannakis</div>
+            <div class="subtitle">ECE@Tuc</div>
+        </div>
+    </div>
+</div>
+
+
+
+    <div id="description" class="section">
+        <h2>Περιγραφή του Project</h2>
+        <p>Project για το μάθημα "Autonomous Agents"</p>
+        <p>Επιβλέπων καθηγητής: Michail G. Lagoudakis</p>
+        <p>Το θέμα του συγκεκριμένου project είναι η αυτόνομη οδήγηση ενός αυτοκινήτου εντός ενός προσομοιωτή πόλης.Για τις προσομοιώσεις επιλέχθηκε το περιβάλλον του Webot. Ο σκοπός ήταν το αυτοκίνητο να καταφέρει αυτόνομα να κινηθεί μέσα στην πόλη τηρώντας στοιχειώδεις νόμους του ΚΟΚ όπως η διατήρηση της σωστής λωρίδας, το σταμάτημα στα κόκκινα φανάρια και η εκκίνηση στα πράσινα. Επίσης, το αυτοκίνητο δοκιμάστηκε και σε εικονικές πόλεις με άλλα οχήματα με σκοπό ο Controller, που ελέγχει το αυτόνομο όχημα να εξελιχθεί, να αντιλαμβάνεται και να αποφεύγει-προσπερνά τα οχήματα της πόλης.</p>
+        <p>Για να επιτευχθεί ο στόχος, χρησιμοποιήθηκαν μέσα, του συγκεκριμένου προσομοιωτή, όπως κάμερες και αισθητήρες απόφασης, και μέσω της λογικής που δόθηκε, ο Controller κατάφερε να ελέγξει αυτόνομα το όχημα μέσα στην εικονική πόλη.</p>
+        <p>Εντός της παρακάτω παρουσίασης υπάρχουν βίντεο που απαθανατίζουν το όχημα να κινείται αυτόνομα μέσα στην πόλη και επιβεβαιώνει την σωστή λειτουργία του Controller.</p>
+    </div>
+
+    
+
+
+   <div id="project" class="section">
+    <h2>Το Project</h2>
+    <div class="project-content">
+        <div class="project-links">
+            <button onclick="location.href='#';">
+                <img src="icons/source-code-icon.png" alt="Source Code Icon" style="width: 20px; height: 20px;">
+                Source Code
+            </button>
+            <button onclick="location.href='#';">
+                <img src="icons/report-icon.png" alt="Report Icon" style="width: 20px; height: 20px;">
+                Report
+            </button>
+            <button onclick="location.href='#';">
+                <img src="icons/presentation-icon.png" alt="Presentation Icon" style="width: 20px; height: 20px;">
+                Presentation
+            </button>
+        </div>
+        <div class="project-image">
+            <img src="image/mycar2.png" alt="Second Image">
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+   <div id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:kalligiannakiskostis@gmail.com">kalligiannakiskostis@gmail.com</a> ή <a href="mailto:kkalligiannakis@tuc.gr">kkalligiannakis@tuc.gr</a></p>
+    <p>Τηλέφωνο: <a href="tel:6943768815">+6943 768 815</a></p>
+    <p>Social Media:</p>
+    <ul>
+        
+        <li><a href="https://twitter.com/elonmusk" target="_blank">Twitter</a></li>
+        
+    </ul>
+</div>
+
+</body>
+</html>
