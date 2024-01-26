@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Autonomous vehicle driving </title>
+    <title>Autonomous vehicle driving</title>
     <style>
 
 
@@ -79,6 +79,7 @@
            box-shadow: 0 0 100px rgba(0, 0, 0, 0.8); 
         }
         .navbar {
+
             overflow: hidden;
             background-color: #333;
             position: -webkit-sticky;
@@ -115,7 +116,26 @@
             font-size: 20px; 
             margin-top: 10px; 
         }
+/* Style for language switch buttons */
+.lang-switch-button {
+    background-color: rgba(51, 51, 51, 0.9);
+    color: white;             /* White text */
+    padding: 15px 30px;       /* Larger padding for bigger size */
+    border: none;             /* No border */
+    border-radius: 5px;       /* Rounded corners */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;    /* Inline display */
+    font-size: 16px;          /* Larger font size */
+    margin: 4px 2px;          /* Margin for spacing */
+    cursor: pointer;          /* Cursor changes to pointer on hover */
+    transition: 0.3s;         /* Smooth transition for hover effect */
+}
 
+.lang-switch-button:hover {
+   background-color: #333; 
+           box-shadow: 0 0 100px rgba(0, 0, 0, 0.8); 
+}
 
         .navbar a {
             display: inline-block; 
@@ -145,32 +165,89 @@
         }
 
 
+
+
+
+
+
     </style>
+
+    <script>
+        function switchLanguage(lang) {
+            // Hide all elements with the 'lang' class
+            document.querySelectorAll('.lang').forEach(function(el) {
+                el.style.display = 'none';
+            });
+
+            // Show elements of the selected language
+            document.querySelectorAll('.lang-' + lang).forEach(function(el) {
+                el.style.display = 'block';
+            });
+
+            // Update the presentation link
+            var presentationLink = document.getElementById('presentation-link');
+            if(lang === 'en') {
+                presentationLink.href = 'https://docs.google.com/presentation/d/14ZfpOKUCGyEQKkULVkyh5d3tOEIx2YUO0H14XwX2-98/edit?usp=sharing';
+            } else {
+                presentationLink.href = 'https://docs.google.com/presentation/d/1dZdA7GjKElZHdIL7XvvAxBlQmqq2y3EuoRbVubuOoL8/edit?usp=sharing';
+            }
+
+
+
+           // Update the presentation link
+            var reportLink = document.getElementById('report-link');
+            if(lang === 'en') {
+                reportLink.href = 'https://docs.google.com/document/d/16VnK3R-7IbKJSKNVQWpcY3EDvrG0Ojoz/edit?usp=sharing&ouid=114703440874364650750&rtpof=true&sd=true';
+            } else {
+                reportLink.href = 'https://docs.google.com/document/d/1pM0G_5CLsdaJ4SP3mcDvvoQ7nQ2BOIMH/edit?usp=sharing&ouid=114703440874364650750&rtpof=true&sd=true';
+            }
+
+
+        }
+    </script>
 </head>
-<body>
+<body onload="switchLanguage('en')">
 
 <div class="navbar">
-    <a href="#home">Αρχική</a>
-    <a href="#description">Περιγραφή</a>
-    <a href="#project">Το Project</a>
-    <a href="#contact">Επικοινωνία</a>
+    <!-- English Navbar Links -->
+    <a href="#home" >Home</a>
+    <a href="#description" >Description</a>
+    <a href="#project" >The Project</a>
+    <a href="#contact" >Contact</a>
+
+    
 </div>
 
+
 <div class="main-content">
-    <div id="home" class="section">
-    <div class="image-container" style="position: relative; display: inline-block;">
-        <img src="image/mycar.png" alt="My Autonomous Car">
-        <div class="image-text">
+     <div id="home" class="section">
+        <div class="image-container" style="position: relative; display: inline-block;">
+            <img src="image/mycar.png" alt="My Autonomous Car">
+            <div class="image-text">
             Autonomous vehicle driving 
             <div class="subtitle">by Kostis Kalligiannakis</div>
             <div class="subtitle">ECE@Tuc</div>
         </div>
+      </div>
     </div>
-</div>
 
+ <div id="description" class="section">
+    <!-- English Description -->
+    <button class="lang-switch-button" onclick="switchLanguage('en')">English</button>
+    <button class="lang-switch-button" onclick="switchLanguage('gr')">Ελληνικά</button>
+    
 
-
-    <div id="description" class="section">
+    <div class="lang lang-en">
+        <h2>Project Description</h2>
+        <p>Project for the course "Autonomous Agents"</p>
+        <p>Supervising professor: Michail G. Lagoudakis</p>
+        <p>The subject of this project is the autonomous driving of a car within a city simulator. The Webot environment was chosen for the simulations. The goal was for the car to autonomously navigate through the city, adhering to basic traffic laws such as maintaining the correct lane, stopping at red lights, and starting at green ones. Additionally, the car was tested in a virtual city with other vehicles to evolve the Controller, which operates the autonomous vehicle. Thus, the ability to perceive and avoid-overtake the other vehicles in the city was added to its logic.</p>
+        <p>To achieve this goal, tools of this specific simulator, such as cameras and distance sensors, were used, and through the logic provided, the Controller managed to autonomously control the vehicle within the virtual city.</p>
+        <p>Within the following presentation, there are videos capturing the vehicle moving autonomously in the city, confirming the correct operation of the Controller.</p>
+    </div>
+    
+     <!-- Greek Description -->
+    <div class="lang lang-gr" style="display:none;">
         <h2>Περιγραφή του Project</h2>
         <p>Project για το μάθημα "Autonomous Agents"</p>
         <p>Επιβλέπων καθηγητής: Michail G. Lagoudakis</p>
@@ -179,49 +256,58 @@
         <p>Εντός της παρακάτω παρουσίασης υπάρχουν βίντεο που απαθανατίζουν το όχημα να κινείται αυτόνομα μέσα στην πόλη και επιβεβαιώνει την σωστή λειτουργία του Controller.</p>
     </div>
 
-    
+    <div id="project" class="section">
+        <!-- Language-independent content -->
+        <h2 class="lang lang-en">The Project</h2>
+        <h2 class="lang lang-gr" style="display:none;">Το Project</h2>
+        <!-- ... -->
 
+        <div class="project-content">
 
-   <div id="project" class="section">
-    <h2>Το Project</h2>
-    <div class="project-content">
-        <div class="project-links">
-            <button onclick="window.location.href='https://docs.google.com/document/d/154-W3YsiE0eBMqsmfiOs6nxN36ryQYFjHW9sVe_Th4g/edit?usp=sharing';">
-                <img src="icons/source-code-icon.png" alt="Source Code Icon" style="width: 20px; height: 20px;">
-                Source Code
-            </button>
+            <div class="project-links">
+
             <button onclick="location.href='#';">
+                <img src="icons/source-code-icon.png" alt="Source Code Icon" style="width: 20px; height: 20px;">
+                <span class="lang lang-en">Source Code</span>
+                <span class="lang lang-gr" style="display:none;">Κώδικας</span>
+            </button>
+
+            <button id="report-link" onclick="window.location.href=this.href;">
                 <img src="icons/report-icon.png" alt="Report Icon" style="width: 20px; height: 20px;">
-                Αναφορά
+                <span class="lang lang-en">Report</span>
+                <span class="lang lang-gr" style="display:none;">Αναφορά</span>
             </button>
-                       
-            <button onclick="window.location.href='https://docs.google.com/presentation/d/1dZdA7GjKElZHdIL7XvvAxBlQmqq2y3EuoRbVubuOoL8/edit?usp=sharing';">
+
+            <button id="presentation-link" onclick="window.location.href=this.href;">
                 <img src="icons/presentation-icon.png" alt="Presentation Icon" style="width: 20px; height: 20px;">
-                Παρουσίαση
+                <span class="lang lang-en">Presentation</span>
+                <span class="lang lang-gr" style="display:none;">Παρουσίαση</span>
             </button>
-        </div>
-        <div class="project-image">
+                
+
+            </div>
+            <div class="project-image">
             <img src="image/mycar2.png" alt="Second Image">
         </div>
+
+        </div>
     </div>
-</div>
 
+      <div id="contact" class="section">
+         <!-- Language-independent content -->
+        <h2 class="lang lang-en">Contact</h2>
+        <h2 class="lang lang-gr" style="display:none;">Επικοινωνία</h2>
+        <!-- ... -->
+        <p>Email: <a href="mailto:kalligiannakiskostis@gmail.com">kalligiannakiskostis@gmail.com</a> ή <a href="mailto:kkalligiannakis@tuc.gr">kkalligiannakis@tuc.gr</a></p>
+        <p>Τηλέφωνο: <a href="tel:6943768815">+6943 768 815</a></p>
+        <p>Social Media:</p>
 
-
-
-
-
-
-   <div id="contact" class="section">
-    <h2>Επικοινωνία</h2>
-    <p>Email: <a href="mailto:kalligiannakiskostis@gmail.com">kalligiannakiskostis@gmail.com</a> ή <a href="mailto:kkalligiannakis@tuc.gr">kkalligiannakis@tuc.gr</a></p>
-    <p>Τηλέφωνο: <a href="tel:6943768815">+6943 768 815</a></p>
-    <p>Social Media:</p>
-    <ul>
+        <ul>
         
         <li><a href="https://twitter.com/elonmusk" target="_blank">Twitter</a></li>
         
-    </ul>
+         </ul>
+</div>
 </div>
 
 </body>
